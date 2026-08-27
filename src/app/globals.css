@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-green-dark: #1b4313;
+  --color-brand-green: #367C2B;
+  --color-brand-green-light: #4c9c3e;
+  --color-brand-yellow: #FFDE00;
+  --color-brand-yellow-dark: #d1b600;
+  --color-earth-gray: #121410;
+  --color-earth-sand: #fcfbf7;
+  
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+:root {
+  --background: #121410;
+  --foreground: #fcfbf7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121410;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252a22;
+  border-radius: 5px;
+  border: 2px solid #121410;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #367C2B;
+}
+
+/* Selection */
+::selection {
+  background-color: #367C2B;
+  color: #ffffff;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(18, 20, 16, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-nav {
+  background: rgba(18, 20, 16, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Text Gradient */
+.text-gradient-green {
+  background: linear-gradient(135deg, #ffffff 30%, #4c9c3e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-yellow {
+  background: linear-gradient(135deg, #ffffff 40%, #FFDE00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* GSAP Opacity Pre-loading to prevent FOUC (Flash of Uncontented Content) */
+.gsap-reveal {
+  opacity: 0;
+}
